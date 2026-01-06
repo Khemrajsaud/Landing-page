@@ -1,14 +1,15 @@
-import landing_page from "../assets/landing page.jpg";
+import { motion } from "framer-motion";
+import landing_page from "../assets/hero_image.jpg";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative h-[90vh] w-full">
+    <section id="home" className="relative h-[90vh] w-full overflow-hidden">
       
       {/* Background Image */}
       <img
         src={landing_page}
         alt="Hero"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover scale-105"
       />
 
       {/* Overlay */}
@@ -16,32 +17,60 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
-        <div className="text-center max-w-3xl text-white">
-          
-          <h2 className="text-lg md:text-xl uppercase tracking-widest text-gray-300 mb-3">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center max-w-3xl text-white"
+        >
+          {/* Subtitle */}
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-sm sm:text-lg md:text-xl uppercase tracking-widest text-gray-300 mb-3"
+          >
             Innovate Your Business
-          </h2>
+          </motion.h2>
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          {/* Title */}
+          <motion.h1
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6"
+          >
             With <span className="text-blue-500">Excellence</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-gray-300 text-base md:text-lg mb-8">
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-gray-300 text-sm sm:text-base md:text-lg mb-8"
+          >
             We transform digital experiences using cutting-edge technology
             and modern design. Elevate your brand to the next level today.
-          </p>
+          </motion.p>
 
-          <div className="flex justify-center gap-4 flex-wrap">
-            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-md text-white font-medium transition">
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+            className="flex justify-center gap-4 flex-wrap"
+          >
+            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-md text-white font-medium transition-all duration-300 hover:scale-105">
               Get Started
             </button>
-            <button className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-md font-medium transition">
+
+            <button className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105">
               Learn More
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-
     </section>
   );
 }
