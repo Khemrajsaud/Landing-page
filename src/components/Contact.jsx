@@ -35,7 +35,6 @@ const Contact = () => {
     <section id="contact" className="bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* Heading */}
         <div className="text-center mb-14">
           <p className="text-blue-600 font-semibold uppercase">
             Get In Touch
@@ -48,7 +47,7 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Layout */}
+       
         <div className="grid lg:grid-cols-2 gap-12">
 
           {/* Left Side */}

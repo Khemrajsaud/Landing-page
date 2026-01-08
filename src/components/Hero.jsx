@@ -11,8 +11,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+    
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center justify-center px-6">
@@ -49,8 +48,7 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             className="text-gray-300 text-sm sm:text-base md:text-lg mb-8"
           >
-            {/* We transform digital experiences using cutting-edge technology
-            and modern design. Elevate your brand to the next level today. */}
+        
             We empower local institutions with elite digital tools, bridging
             academic learning with real-world industry needs. Our vision is to
             raise Nepal’s engineers to global standards through world-class,
@@ -70,7 +68,7 @@ export default function Hero() {
             </button>
 
             <button className="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105">
-              Learn More
+             <a href="#about"> Learn More</a>
             </button>
           </motion.div>
         </motion.div>

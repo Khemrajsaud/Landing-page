@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
 export default function Testimonials() {
   const reviews = [
     {
@@ -54,7 +55,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-[#0f172a]">
+    <section id="testimonials" className="py-20 bg-[#0f172a]">
       {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-blue-500 text-sm font-semibold">TESTIMONIALS</p>

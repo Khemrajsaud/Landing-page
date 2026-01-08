@@ -1,21 +1,8 @@
-📌 Project Description
-This is a modern, responsive Landing page website built using React.js and Tailwind CSS.
-The project showcases a complete one-page website structure including:
--Hero section
--About section
--Services
--Portfolio (Projects)
--Testimonials (Carousel)
--Contact form with EmailJS integration
 
-The website is fully responsive across mobile, tablet, and desktop devices and includes smooth UI interactions and animations for a professional user experience.
+#Project Description
 
- Technologies Used
-React.js – Frontend library
-Tailwind CSS – Utility-first CSS framework
-EmailJS – Client-side email sending
-Lucide React – Icon library
-React Slick – Carousel/slider for testimonials
-React Toastify – Toast notifications
-JavaScript (ES6+)
-HTML5 & CSS3
+This project is a responsive and modern Landing Page developed as part of a Frontend Internship assignment. The website includes multiple sections such as Hero, About, Services, Portfolio, Testimonials, and Contact.
+
+The Contact section is integrated with EmailJS, allowing users to send emails directly from the website without requiring a backend server. The main goal of this project is to demonstrate frontend development skills, clean UI design, and real-world form handling.
+
+#Technologies used

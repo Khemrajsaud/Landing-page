@@ -11,17 +11,17 @@ import about from "../assets/about.jpg";
 
 export default function About() {
   const stats = [
-    { icon: <Calendar1 />, label: "Years Experience", value: "10+" },
-    { icon: <FolderKanban />, label: "Projects Done", value: "500+" },
-    { icon: <Users />, label: "Happy Clients", value: "200+" },
-    { icon: <Award />, label: "Team Members", value: "50+" },
+    { icon: <Calendar1 />, label: "Years Experience", value: "3+" },
+    { icon: <FolderKanban />, label: "Projects Live", value: "5+" },
+    { icon: <Users />, label: "Happy Clients", value: "10+" },
+    { icon: <Award />, label: "Team Members", value: "5+" },
   ];
 
   return (
     <section id="about" className="py-20 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
 
-        {/* Heading */}
+      
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function About() {
             />
           </motion.div>
 
-          {/* Text */}
+         
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +63,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold mb-4">
-              Driving Innovation Since 2014
+              Driving Innovation Since 2022
             </h3>
 
             <p className="text-gray-600 mb-4 leading-relaxed text-justify">
