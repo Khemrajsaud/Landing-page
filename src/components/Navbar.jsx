@@ -23,7 +23,7 @@ const Navbar = () => {
       className="sticky top-0 z-50 bg-white shadow-md"
     >
      
-      <div className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 flex items-center justify-between">
         {/* Logo */}
         <img src={logo} alt="Logo" className="w-36 md:w-40" />
 
@@ -67,7 +67,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-white shadow-inner px-6 py-4"
+            className="md:hidden bg-white shadow-inner shadow-gray-300 px-6 py-4"
           >
             {links.map((link, i) => (
               <motion.a

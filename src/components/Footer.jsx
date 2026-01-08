@@ -1,66 +1,3 @@
-// import React from "react";
-// import { Facebook, Instagram, Linkedin, Github } from "lucide-react";
-// import logo from "../assets/logo.png";
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-gray-900 text-gray-300 pt-12">
-//       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-
-//         {/* Company Info */}
-//         <div>
-//           <img src={logo} alt="Logo" className="w-40 mb-4" />
-//           <p className="text-sm leading-relaxed">
-//             We build modern, responsive, and scalable web applications
-//             focused on performance and user experience.
-//           </p>
-//         </div>
-
-//         {/* Quick Links */}
-//         <div>
-//           <h3 className="text-white text-lg font-semibold mb-4">
-//             Quick Links
-//           </h3>
-//           <ul className="space-y-2">
-//             <li><a href="#about" className="hover:text-white">About</a></li>
-//             <li><a href="#services" className="hover:text-white">Services</a></li>
-//             <li><a href="#portfolio" className="hover:text-white">Portfolio</a></li>
-//             <li><a href="#contact" className="hover:text-white">Contact</a></li>
-//           </ul>
-//         </div>
-
-//         {/* Social Media */}
-//         <div>
-//           <h3 className="text-white text-lg font-semibold mb-4">
-//             Follow Us
-//           </h3>
-//           <div className="flex gap-4">
-//             <a href="#" className="hover:text-white">
-//               <Facebook />
-//             </a>
-//             <a href="#" className="hover:text-white">
-//               <Instagram />
-//             </a>
-//             <a href="#" className="hover:text-white">
-//               <Linkedin />
-//             </a>
-//             <a href="#" className="hover:text-white">
-//               <Github />
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Bottom Section */}
-//       <div className="border-t border-gray-700 mt-10 py-4 text-center text-sm">
-//         © {new Date().getFullYear()} Niijo Tech. All rights reserved.
-//       </div>
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
 
 import React from "react";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
@@ -114,7 +51,7 @@ const Footer = () => {
           <p className="text-sm mb-4">
             Join our newsletter to stay updated with the latest news and special offers.
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 md: flex-col">
             <input
               type="email"
               placeholder="Your email address"
@@ -128,13 +65,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-700 mt-10 py-4 text-center text-sm flex flex-col md:flex-row justify-between items-center">
-        <span>© {new Date().getFullYear()} InnovateCorp. All rights reserved.</span>
-        <div className="space-x-4 mt-2 md:mt-0">
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Terms of Service</a>
-          <a href="#" className="hover:text-white">Cookie Policy</a>
-        </div>
+      <div className="border-t border-gray-700 mt-10 py-4  text-center">
+        <span className=" ">© {new Date().getFullYear()} InnovateCorp. All rights reserved.</span>
+        
       </div>
     </footer>
   );

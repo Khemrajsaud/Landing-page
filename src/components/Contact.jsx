@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, SendHorizontal } from "lucide-react";
 import Map from "../address/Map";
 
 const Contact = () => {
@@ -70,7 +70,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-semibold">Phone Number</h4>
-                <p className="text-gray-600">+273627854346</p>
+                <p className="text-gray-600">+977 9705967452</p>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-semibold">Email Address</h4>
-                <p className="text-gray-600">hello@innovation.com</p>
+                <p className="text-gray-600">niijo.info@gmail.com</p>
               </div>
             </div>
 
@@ -173,7 +173,10 @@ const Contact = () => {
                     Sending...
                   </>
                 ) : (
-                  "Send Message"
+                 <>
+                 Send Message <SendHorizontal className=" w-4"/>
+                 </>
+                
                 )}
               </button>
 

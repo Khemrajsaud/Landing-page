@@ -4,7 +4,6 @@ import landing_page from "../assets/hero_image.jpg";
 export default function Hero() {
   return (
     <section id="home" className="relative h-[90vh] w-full overflow-hidden">
-      
       {/* Background Image */}
       <img
         src={landing_page}
@@ -30,7 +29,7 @@ export default function Hero() {
             transition={{ delay: 0.3 }}
             className="text-sm sm:text-lg md:text-xl uppercase tracking-widest text-gray-300 mb-3"
           >
-            Innovate Your Business
+            We Build. We Teach. We Innovate.
           </motion.h2>
 
           {/* Title */}
@@ -50,8 +49,13 @@ export default function Hero() {
             transition={{ delay: 0.8 }}
             className="text-gray-300 text-sm sm:text-base md:text-lg mb-8"
           >
-            We transform digital experiences using cutting-edge technology
-            and modern design. Elevate your brand to the next level today.
+            {/* We transform digital experiences using cutting-edge technology
+            and modern design. Elevate your brand to the next level today. */}
+            We empower local institutions with elite digital tools, bridging
+            academic learning with real-world industry needs. Our vision is to
+            raise Nepal’s engineers to global standards through world-class,
+            accessible technical mastery—grounded in rigor, transparency, and
+            human-centric design.
           </motion.p>
 
           {/* Buttons */}
