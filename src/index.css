@@ -2,13 +2,3 @@
 
 @import "tailwindcss";
 
-/* Change inactive dot color */
-.slick-dots li button:before {
-  color: #94a3b8;   /* gray */
-  font-size: 10px;
-}
-
-/* Change active dot color */
-.slick-dots li.slick-active button:before {
-  color: #3b82f6;   /* blue */
-}
