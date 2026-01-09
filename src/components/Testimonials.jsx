@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 export default function Testimonials() {
   const reviews = [
     {
@@ -41,7 +40,7 @@ export default function Testimonials() {
   ];
 
   const settings = {
-    dots: true, 
+    dots: true,
     infinite: true,
     autoplay: true,
     speed: 600,
@@ -65,36 +64,30 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto px-4">
         <Slider {...settings}>
           {reviews.map((item, index) => (
-            <div key={index} className="px-3">
-              <div className="bg-[#111827] p-6 rounded-xl h-full shadow-lg">
-                
-                {/* Stars */}
-                <div className="flex text-yellow-400 mb-4">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
+            <div
+              key={index}
+              className="p-6 mx-2 bg-gray-900 rounded-lg shadow-lg flex flex-col justify-between h-full"
+            >
+              {/* Stars */}
+              <div className="flex mb-2">
+                {Array.from({ length: item.rating }).map((_, i) => (
+                  <Star key={i} className="text-yellow-400 w-5 h-5" />
+                ))}
+              </div>
 
-                {/* Quote */}
-                <p className="text-gray-300 text-sm mb-6">
-                  “{item.quote}”
-                </p>
+              {/* Quote */}
+              <p className="text-gray-300 mb-4 flex-1">{item.quote}</p>
 
-                {/* User */}
-                <div className="flex items-center gap-3">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="text-white font-semibold text-sm">
-                      {item.name}
-                    </h4>
-                    <p className="text-gray-400 text-xs">
-                      {item.role}
-                    </p>
-                  </div>
+              {/* Reviewer Info */}
+              <div className="flex items-center gap-3 mt-4">
+                <img
+                  className="rounded-full w-12 h-12 object-cover"
+                  src={item.image}
+                  alt={item.name}
+                />
+                <div className="flex flex-col">
+                  <h3 className="text-white font-semibold">{item.name}</h3>
+                  <p className="text-gray-400 text-sm">{item.role}</p>
                 </div>
               </div>
             </div>
