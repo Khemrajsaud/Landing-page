@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
-import logo from "../assets/logo.png";
+import footerlogo from "../assets/footer-logo.png"
+import { footer } from "motion/react-client";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
 
         {/* Company Info */}
         <div>
-          <img src={logo} alt="Logo" className="w-40 mb-4" />
+          <img src={footerlogo} alt="Logo" className="w-20 rounded-md mb-4" />
           <p className="text-sm leading-relaxed mb-4">
             We build digital products that help brands grow and succeed in the modern economy. Your partner in innovation.
           </p>

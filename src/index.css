@@ -2,5 +2,12 @@
 
 @import "tailwindcss";
 
+/* Override Slick slider dots */
+.slick-dots li button:before {
+  color: #ffffff !important;      
+  font-size: 12px !important;      
+}
 
-
+.slick-dots li.slick-active button:before {
+  color: #facc15 !important;      
+}

@@ -62,7 +62,12 @@ export default function Testimonials() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4">
-        <Slider {...settings}>
+        <Slider {...settings}
+        
+  appendDots={(dots) => (
+    <ul className="mt-6">{dots}</ul>  
+  )}
+        >
           {reviews.map((item, index) => (
             <div
               key={index}
