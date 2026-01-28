@@ -54,14 +54,19 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-[#0f172a]">
+    <section  className="py-20 bg-white">
       {/* Heading */}
-      <div className="text-center mb-12">
-        <p className="text-blue-500 text-sm font-semibold">TESTIMONIALS</p>
-        <h2 className="text-3xl font-bold text-white">Client Feedback</h2>
-      </div>
+     <div className="flex items-center justify-center gap-4 mb-4 ml-8 ">
+                <div className="h-px w-10 bg-black"></div>
+    
+                <p className="text-xs  tracking-widest text-gray-500 uppercase whitespace-nowrap">
+              Client Feedback
+                </p>
+    
+                <div className="h-px w-10 bg-black"></div>
+              </div>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className=" ">
         <Slider {...settings}
         
   appendDots={(dots) => (
@@ -71,17 +76,17 @@ export default function Testimonials() {
           {reviews.map((item, index) => (
             <div
               key={index}
-              className="p-6 mx-2 bg-gray-900 rounded-lg shadow-lg flex flex-col justify-between h-full"
+              className="p-6 mx-2  text-black gap-10  flex flex-col justify-between h-full"
             >
               {/* Stars */}
-              <div className="flex mb-2">
+              <div className="flex mb-2 text-black ">
                 {Array.from({ length: item.rating }).map((_, i) => (
                   <Star key={i} className="text-yellow-400 w-5 h-5" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-gray-300 mb-4 flex-1">{item.quote}</p>
+              <p className="text-black mb-4  italic flex-1">{item.quote}</p>
 
               {/* Reviewer Info */}
               <div className="flex items-center gap-3 mt-4">

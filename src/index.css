@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Averia+Gruesa+Libre&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
 
 /* Override Slick slider dots */
 .slick-dots li button:before {
-  color: #ffffff !important;      
+  color: #efff09 !important;      
   font-size: 12px !important;      
 }
 
 .slick-dots li.slick-active button:before {
-  color: #facc15 !important;      
+  color: #000000 !important;      
+}
+
+body {
+   font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
 }

@@ -1,71 +1,115 @@
-
 import React from "react";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
-import footerlogo from "../assets/footer-logo.png"
-import { footer } from "motion/react-client";
+import { Facebook, Twitter, Linkedin, Instagram, ArrowUpRight, Mail } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <section id="footer" >
-    <footer className="bg-gray-900 text-gray-300 pt-12">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-
-        {/* Company Info */}
-        <div>
-          <img src={footerlogo} alt="Logo" className="w-20 rounded-md mb-4" />
-          <p className="text-sm leading-relaxed mb-4">
-            We build digital products that help brands grow and succeed in the modern economy. Your partner in innovation.
-          </p>
-          
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li><a href="#about" className="hover:text-white">About Us</a></li>
-            <li><a href="#services" className="hover:text-white">Our Services</a></li>
-            <li><a href="#portfolio" className="hover:text-white">Portfolio</a></li>
-            <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
-            <li><a href="#contact" className="hover:text-white">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Services */}
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Services</h3>
-          <ul className="space-y-2">
-            <li><a href="#services" className="hover:text-white">Web Development</a></li>
-            <li><a href="#services" className="hover:text-white">App Development</a></li>
-            <li><a href="#services" className="hover:text-white">UI/UX Design</a></li>
-            <li><a href="#services" className="hover:text-white">Digital Marketing</a></li>
-            <li><a href="#services" className="hover:text-white">Cloud Services</a></li>
-          </ul>
-        </div>
-
-        {/* social link */}
-        <div>
-          <h3 className="text-white text-lg font-semibold mb-4">Social Links</h3>
-          <p className="text-sm mb-4">
-            Connect with us through our social links to discuss the project and collaborate.
-          </p>
+    <section id="footer" className="bg-black text-white border-t border-zinc-900">
+      <footer className="max-w-7xl mx-auto px-6 pt-24 pb-12">
         
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-white"><Facebook /></a>
-            <a href="#" className="hover:text-white"><Twitter /></a>
-            <a href="#" className="hover:text-white"><Linkedin /></a>
+        {/* Main Footer Grid */}
+        <div className="grid lg:grid-cols-12 gap-16 mb-20">
+          
+          {/* Brand Column */}
+          <div className="lg:col-span-4 space-y-8">
+            <h1 className="text-4xl font-black uppercase tracking-tighter italic">
+              Nijjo<span className="text-zinc-600">.</span>
+            </h1>
+            <p className="text-zinc-400 leading-relaxed max-w-sm font-medium">
+              Architecting the future of digital experiences from Kailali, Nepal. 
+              We blend precision engineering with minimalist aesthetics.
+            </p>
+            <div className="flex gap-4">
+              {[
+                { icon: <Facebook size={18} />, link: "#" },
+                { icon: <Twitter size={18} />, link: "#" },
+                { icon: <Linkedin size={18} />, link: "#" },
+                { icon: <Instagram size={18} />, link: "#" },
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.link} 
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-800 text-zinc-400 hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Links Columns */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10">
+            
+            {/* Quick Links */}
+            <div className="space-y-6">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">Navigation</h3>
+              <ul className="space-y-4">
+                {["About Us", "Services", "Portfolio", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a href={`#${item.toLowerCase().replace(" ", "")}`} className="text-zinc-400 hover:text-white transition-colors text-sm font-semibold flex items-center gap-1 group">
+                      {item}
+                      <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-1" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div className="space-y-6">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">Solutions</h3>
+              <ul className="space-y-4 text-sm font-semibold text-zinc-400">
+                {["Web Development", "App Development", "UI/UX Design", "Cloud Services"].map((service) => (
+                  <li key={service} className="hover:text-white cursor-pointer transition-colors">
+                    {service}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="col-span-2 md:col-span-1 space-y-6">
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">Contact</h3>
+              <div className="space-y-4">
+                <a href="mailto:niijo.info@gmail.com" className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors">
+                  <Mail size={16} />
+                  <span className="text-sm font-semibold">niijo.info@gmail.com</span>
+                </a>
+                <p className="text-zinc-500 text-xs leading-5">
+                  Available for new projects worldwide. <br />
+                  Let's create something together.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-gray-700 mt-10 py-4  text-center">
-        <span className=" ">© {new Date().getFullYear()} NiijoTech. All rights reserved.</span>
-        
-      </div>
-    </footer>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+          </div>
+          
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+            © {currentYear} NIIJOTECH. MADE IN NEPAL.
+          </span>
+
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors"
+          >
+            Top
+            <div className="w-6 h-6 rounded-full border border-zinc-800 flex items-center justify-center group-hover:border-white transition-colors">
+               ↑
+            </div>
+          </button>
+        </div>
+      </footer>
     </section>
   );
 };
 
 export default Footer;
-
