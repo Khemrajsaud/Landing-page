@@ -3,9 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const TypeWritter = () => {
   return (
-    <div>
-        
-
+    <div>   
          <TypeAnimation
       sequence={[
       
@@ -13,7 +11,7 @@ const TypeWritter = () => {
         1000,
         'We Teach',
         1000,
-        'We Envolv',
+        'We Evolve',
         1000
       ]}
       wrapper="span"
