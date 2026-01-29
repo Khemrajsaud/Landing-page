@@ -3,7 +3,7 @@ import "./crousal.css";
 
 const CrousalLogo = () => {
   const items = [
-    "Kailali Nation Academy",
+    "Kailali National Academy",
     "Indxo AI",
     "Empower International",
     "Bright Future",

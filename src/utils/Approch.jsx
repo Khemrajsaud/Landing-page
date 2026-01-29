@@ -1,135 +1,118 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Shield, Zap, Users, MessageCircle, ArrowUpRight } from "lucide-react";
+import { CheckCircle, Shield, Zap, Users, MessageCircle, ArrowUpRight, Code2, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const OurApproach = () => {
   return (
-    <section className="bg-white py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section className="bg-white py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
         {/* LEFT CONTENT */}
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="lg:col-span-7"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-px w-8 bg-black"></span>
-            <p className="text-[10px] tracking-[0.4em] text-zinc-400 font-black uppercase">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="h-[2px] w-12 bg-black"></span>
+            <p className="text-[11px] tracking-[0.5em] text-zinc-400 font-black uppercase">
               Our Methodology
             </p>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-black text-black leading-[0.9] uppercase tracking-tighter mb-8">
+          <h2 className="text-6xl md:text-8xl font-black text-black leading-[0.85] uppercase tracking-tighter mb-10">
             Quality <br />
-            <span className="text-zinc-300 italic font-light">Software.</span> <br />
-            Local Expertise.
+            <span className="text-zinc-200 italic font-light">Software.</span> <br />
+            Local <span className="text-outline-black text-white" style={{ WebkitTextStroke: '1px black' }}>Pride.</span>
           </h2>
 
-          <p className="text-zinc-500 text-lg mb-12 max-w-xl font-medium leading-relaxed">
-            Based in Kailali, Nepal. We engineer high-performance software 
+          <p className="text-zinc-500 text-xl mb-16 max-w-2xl font-medium leading-relaxed">
+            Based in <span className="text-black underline underline-offset-4 decoration-1">Kailali, Nepal.</span> We engineer high-performance software 
             while mentoring the next wave of developers. We prioritize 
             <span className="text-black"> architectural integrity</span> over rapid scaling.
           </p>
 
-          {/* FEATURES GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
-            <Feature
-              icon={<Shield size={20} />}
-              title="Quality First"
-              desc="Immutable code standards and rigorous testing cycles."
-            />
-            <Feature
-              icon={<Zap size={20} />}
-              title="Modern Stack"
-              desc="React, Node.js, and Type-safe development."
-            />
-            <Feature
-              icon={<Users size={20} />}
-              title="Client Focus"
-              desc="Your business objectives define our roadmap."
-            />
-            <Feature
-              icon={<MessageCircle size={20} />}
-              title="Transparent"
-              desc="Direct engineer-to-client collaboration."
-            />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16 border-t border-zinc-100 pt-16">
+            <Feature icon={<Shield size={22} />} title="Quality First" desc="Immutable code standards and rigorous testing cycles." />
+            <Feature icon={<Zap size={22} />} title="Modern Stack" desc="React, Node.js, and Type-safe development." />
+            <Feature icon={<Users size={22} />} title="Client Focus" desc="Your business objectives define our roadmap." />
+            <Feature icon={<MessageCircle size={22} />} title="Transparent" desc="Direct engineer-to-client collaboration." />
           </div>
         </motion.div>
 
-        {/* RIGHT CARD - Floating Brutalist Design */}
+        {/* IMPROVED RIGHT CARD - Inspired by image_1818b0.png */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="relative"
+          className="lg:col-span-5"
         >
-          {/* Decorative background shape */}
-          <div className="absolute -inset-4 bg-zinc-50 rounded-none -z-10 transform rotate-2"></div>
-          
-          <div className="bg-black text-white p-12 rounded-none shadow-[30px_30px_0px_0px_rgba(228,228,231,1)] group">
-            <div className="flex items-center justify-between mb-10">
-              <div className="flex items-center gap-4">
-                <div className="bg-white text-black p-3">
-                  <CheckCircle size={24} strokeWidth={3} />
+          <div className="relative p-1 bg-white rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+            <div className="bg-white rounded-[38px] p-10 md:p-12 border border-zinc-100">
+              
+              {/* Card Header */}
+              <div className="flex items-center gap-5 mb-12">
+                <div className="bg-black p-4 rounded-2xl shadow-lg">
+                  <CheckCircle className="text-white" size={28} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h4 className="font-black uppercase tracking-tighter text-xl">
-                    Development Pulse
+                  <h4 className="text-2xl font-bold text-zinc-900 tracking-tight">
+                    What We’re Building
                   </h4>
-                  <p className="text-xs text-zinc-500 font-bold uppercase tracking-widest">
-                    Real-time status
+                  <p className="text-zinc-400 font-medium">
+                    Growing with every project.
                   </p>
                 </div>
               </div>
-              <ArrowUpRight className="text-zinc-700 group-hover:text-white transition-colors" />
+
+              <div className="h-px bg-zinc-100 w-full mb-12" />
+
+              {/* Stats Section */}
+              <div className="grid grid-cols-3 gap-4 mb-14 text-center">
+                <Stat value="2025" label="Founded" />
+                <Stat value="1" label="Active Project" />
+                <Stat value="100%" label="Committed" />
+              </div>
+
+              {/* Action Button */}
+              <Link 
+                to="/about" 
+                className="group relative flex w-full items-center justify-center gap-3 bg-[#0f172a] hover:bg-black py-5 rounded-2xl text-white font-bold uppercase text-[13px] tracking-widest transition-all active:scale-95 shadow-xl shadow-zinc-200"
+              >
+                Our Story
+                <ExternalLink size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
             </div>
-
-            <div className="h-px bg-zinc-800 w-full mb-10" />
-
-            <div className="grid grid-cols-3 gap-4 text-center mb-12">
-              <Stat value="2025" label="Est." />
-              <Stat value="01" label="Active" />
-              <Stat value="100%" label="Focus" />
-            </div>
-
-            <button className="w-full bg-white text-black py-5 font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-200 transition-all active:scale-95">
-              Read Our Story
-            </button>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
 };
 
 const Feature = ({ icon, title, desc }) => (
-  <motion.div 
-    whileHover={{ x: 5 }}
-    className="flex flex-col gap-4 group"
-  >
-    <div className="text-black group-hover:scale-110 transition-transform duration-300 w-fit">
+  <div className="flex flex-col gap-5 group">
+    <div className="text-black bg-zinc-50 w-14 h-14 flex items-center justify-center border border-zinc-100 group-hover:bg-black group-hover:text-white transition-all duration-500 rounded-xl">
       {icon}
     </div>
     <div>
-      <h4 className="font-black text-black uppercase tracking-tight text-sm mb-1">
-        {title}
-      </h4>
-      <p className="text-xs text-zinc-500 font-medium leading-relaxed">
-        {desc}
-      </p>
+      <h4 className="font-black text-black uppercase tracking-tighter text-base mb-2">{title}</h4>
+      <p className="text-sm text-zinc-500 font-medium leading-relaxed max-w-[240px]">{desc}</p>
     </div>
-  </motion.div>
+  </div>
 );
 
 const Stat = ({ value, label }) => (
-  <div className="group">
-    <p className="text-3xl font-black text-white tracking-tighter group-hover:italic transition-all">
+  <div className="flex flex-col">
+    <p className="text-3xl md:text-4xl font-black text-zinc-900 tracking-tighter">
       {value}
     </p>
-    <p className="text-[9px] uppercase tracking-[0.2em] text-zinc-500 font-bold mt-2">
+    <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold mt-2">
       {label}
     </p>
   </div>
