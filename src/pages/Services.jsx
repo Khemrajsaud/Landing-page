@@ -63,9 +63,9 @@ const Services = () => {
   ];
 
   return (
-    <main className="bg-white font-sans text-slate-900 overflow-x-hidden">
+    <main className="bg-white font-sans text-slate-900 overflow-x-hidden mt-10 ">
       {/* 1. HERO SECTION (CAPABILITIES) */}
-      <section className="relative py-16 lg:py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="relative py-16  lg:py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 md:space-y-8 text-center lg:text-left">
             <div className="inline-block px-4 py-1.5 bg-slate-100 rounded-full">
@@ -104,7 +104,7 @@ const Services = () => {
       </section>
 
       {/* 2. SOFTWARE & ARCHITECTURE SECTION */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="py-10 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="bg-black p-2.5 rounded-xl shadow-lg shrink-0">
             <div className="grid grid-cols-2 gap-1">
@@ -141,7 +141,7 @@ const Services = () => {
       </section>
 
       {/* 3. ACADEMY SECTION (HOVER BLACK CARDS) */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <section className="py-10 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
         <div className="flex items-center gap-6 mb-12">
           <div className="bg-[#1a1c2e] p-2.5 rounded-xl shadow-lg shrink-0">
             <GraduationCap className="text-white w-6 h-6" />

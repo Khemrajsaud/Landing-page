@@ -32,7 +32,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-white py-16 md:py-24 transition-all">
+    <section className="bg-white mt-8 py-16 md:py-24 transition-all">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* --- Header Section --- */}
