@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Code2, Cpu, Globe, Layout } from 'lucide-react';
+import { ExternalLink, Github, Code2, Cpu, Globe, Layout, Plus } from 'lucide-react';
 
 const projects = [
   {
@@ -53,48 +53,51 @@ const projects = [
   }
 ];
 
-// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 }
+    transition: { staggerChildren: 0.15 }
   }
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
 export default function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-[#f8fafc] overflow-hidden">
+    <section id="portfolio" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm mb-4">
-              Our Creative Portfolio
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Crafting Digital <span className="text-slate-400">Masterpieces.</span>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-black"></span>
+              <h2 className="text-black font-black uppercase tracking-[0.3em] text-[10px]">
+                Selected Works
+              </h2>
+            </div>
+            <h3 className="text-5xl md:text-7xl font-black text-black tracking-tighter leading-[0.9] uppercase">
+              Digital <br />
+              <span className="text-zinc-300 italic font-light">Excellence.</span>
             </h3>
           </motion.div>
           
           <motion.p 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-slate-500 text-lg md:max-w-xs font-medium"
+            className="text-zinc-500 text-lg md:max-w-xs font-medium leading-relaxed"
           >
-            A curated selection of our most impactful engineering challenges and visual solutions.
+            Engineering robust solutions with a focus on minimalist design and maximum performance.
           </motion.p>
         </div>
 
@@ -104,65 +107,62 @@ export default function Portfolio() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((p, i) => (
             <motion.div
               key={i}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="group relative bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+              className="group relative"
             >
               {/* Image Wrapper */}
-              <div className="relative h-64 overflow-hidden">
-                <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <div className="relative aspect-[4/5] overflow-hidden bg-zinc-100 rounded-none mb-6">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10" />
                 <motion.img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition duration-700 ease-in-out"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transform group-hover:scale-105 transition duration-700 ease-out"
                 />
-                {/* Floating Badge */}
+                
+                {/* Overlay Button */}
+                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-2xl scale-50 group-hover:scale-100 transition-transform duration-500">
+                      <Plus className="text-black" />
+                   </div>
+                </div>
+
                 <div className="absolute top-6 left-6 z-20">
-                  <span className="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">
+                  <span className="bg-black text-white text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-none">
                     {p.category}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8 relative">
-                <div className="flex items-center gap-3 mb-4 text-blue-600">
-                  {p.icon}
-                  <h4 className="font-bold text-2xl text-slate-900 group-hover:text-blue-600 transition-colors">
+              <div className="relative">
+                <div className="flex justify-between items-start mb-2">
+                  <h4 className="font-black text-2xl text-black uppercase tracking-tighter group-hover:tracking-normal transition-all duration-500">
                     {p.title}
                   </h4>
+                  <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+                    <Github size={18} className="text-zinc-400 hover:text-black cursor-pointer" />
+                    <ExternalLink size={18} className="text-zinc-400 hover:text-black cursor-pointer" />
+                  </div>
                 </div>
                 
-                <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                <p className="text-zinc-500 text-sm leading-relaxed mb-6 font-medium line-clamp-2">
                   {p.desc}
                 </p>
 
-                {/* Footer: Tech & Links */}
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-50">
-                  <div className="flex flex-wrap gap-2">
-                    {p.tech.map((t, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter"
-                      >
-                        #{t}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    <button className="text-slate-400 hover:text-blue-600 transition-colors">
-                      <Github className="w-5 h-5" />
-                    </button>
-                    <button className="text-slate-400 hover:text-blue-600 transition-colors">
-                      <ExternalLink className="w-5 h-5" />
-                    </button>
-                  </div>
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {p.tech.map((t, idx) => (
+                    <span
+                      key={idx}
+                      className="text-[10px] font-bold text-zinc-300 uppercase tracking-widest group-hover:text-zinc-800 transition-colors"
+                    >
+                      {t}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -171,12 +171,13 @@ export default function Portfolio() {
         
         {/* Bottom CTA */}
         <motion.div 
-           initial={{ opacity: 0 }}
-           whileInView={{ opacity: 1 }}
-           className="mt-20 text-center"
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           className="mt-24 text-center"
         >
-          <button className="bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-500/20">
-            View All Case Studies
+          <button className="group relative overflow-hidden bg-black text-white px-12 py-5 rounded-none font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-800 transition-all">
+            <span className="relative z-10">Archive 2024</span>
+            <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 mix-blend-difference"></div>
           </button>
         </motion.div>
       </div>

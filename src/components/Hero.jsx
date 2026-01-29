@@ -6,8 +6,11 @@ import OurApproach from "../utils/Approch";
 import CrousalLogo from "./CrousalLogo";
 import WhatWeBuild from "../utils/WhatWeBuild";
 import { MonitorCloud, School, Cpu, ArrowRight } from "lucide-react";
+import TypeWritter from "../utils/TypeWritter";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  
   return (
     <div className="bg-white">
       <section className="relative min-h-screen w-full overflow-hidden bg-black flex items-center">
@@ -43,10 +46,9 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl xl:text-8xl font-black text-white leading-[0.9] uppercase tracking-tighter">
-              We <br />
-              <span className="text-zinc-500 italic font-light">Build</span> <br />
-              Future<span className="text-zinc-700">.</span>
+            <h1 className="text-5xl sm:text-7xl xl:text-4xl font-black text-white leading-[0.9] uppercase tracking-tighter">
+           
+                <TypeWritter/>
             </h1>
 
             <p className="mt-8 text-zinc-400 max-w-xl mx-auto lg:mx-0 text-lg md:text-xl font-medium leading-relaxed">
@@ -74,14 +76,15 @@ const Hero = () => {
 
             {/* BUTTONS - High Contrast */}
             <div className="mt-14 flex flex-col sm:flex-row justify-center lg:justify-start gap-5">
-              <button className="group flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-zinc-200 transition-all active:scale-95 shadow-xl shadow-white/5">
-                Start a Project 
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+            
+              <Link to= "/contact" className="group flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-zinc-200 transition-all active:scale-95 shadow-xl shadow-white/5"> Start a Project 
+              
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
 
-              <button className="px-10 py-5 rounded-full border border-zinc-800 text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
+              <Link  to="/services" className="px-10 py-5 rounded-full border border-zinc-800 text-white font-bold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">
                 Our Solutions
-              </button>
+              </Link >
             </div>
           </div>
 
@@ -113,6 +116,7 @@ const Hero = () => {
       {/* OTHER SECTIONS - Ensuring they sit on white or black backgrounds for consistency */}
       <div className="bg-white">
         <Valocity />
+     
        
         <OurApproach />
          <CrousalLogo />

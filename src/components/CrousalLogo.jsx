@@ -1,50 +1,36 @@
 import React from "react";
-import "./crousal.css"
-
+import "./crousal.css";
 
 const CrousalLogo = () => {
-    const items = [
-  "kailali Nation Academy",
-  "Indxo AI",
-   "Empower International",
-  "Bright Future",
-  "Electrono",
-  "Nata Academy",
- 
-  
-];
+  const items = [
+    "Kailali Nation Academy",
+    "Indxo AI",
+    "Empower International",
+    "Bright Future",
+    "Electrono",
+    "Nata Academy",
+  ];
+
   return (
-    
-<div>
-     <div className="flex items-center gap-4 mb-4 ml-10">
-            <div className="h-px w-10 bg-black"></div>
-
-            <p className="text-xs  tracking-widest text-gray-500 uppercase whitespace-nowrap">
-          Collaborating with Excellence
-            </p>
-
-            <div className="h-px w-10 bg-black"></div>
-          </div>
-    
-    <div className="carousel-container">
-  <div className="carousel-track">
-    {items.map((name, index) => (
-      <div key={index} className="card">
-        {name}
+    <section className="logo-section">
+      <div className="section-header">
+        <span className="line"></span>
+        <p className="subtitle">Collaborating with Excellence</p>
       </div>
-    ))}
 
-    {/* duplicate for infinite scroll */}
-    {items.map((name, index) => (
-      <div key={index} className="card" >
-        {name}
+      <div className="carousel-container">
+        <div className="carousel-track">
+          {/* Double the items for a seamless loop */}
+          {[...items, ...items].map((name, index) => (
+            <div key={index} className="card">
+              <span className="brand-name">{name}</span>
+              <span className="dot"></span>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
-</div>
+    </section>
   );
+};
 
-
-}
 export default CrousalLogo;

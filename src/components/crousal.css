@@ -1,35 +1,117 @@
+.logo-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Header styling to match your new Navbar/Hero */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.section-header .line {
+  width: 40px;
+  height: 2px;
+  background: #000;
+  margin-bottom: 15px;
+}
+
+.section-header .subtitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: #a1a1aa; /* Zinc-400 */
+  font-weight: 900;
+}
+
+/* The Container with the Gradient Fade Mask */
 .carousel-container {
   width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
-  margin-top: 60px;
+  position: relative;
+  /* This creates the fade effect on left and right */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .carousel-track {
   display: flex;
-  gap: 5px;
+  align-items: center;
   width: max-content;
-  animation: scroll 10s linear infinite;
+  animation: scroll 25s linear infinite; /* Slower is more luxury */
 }
 
+/* Individual Brand Card */
 .card {
-  flex: 0 0 auto;
-  width: 200px;
-  font-weight: extra-bold;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: large;
-  font-style: italic;
+  padding: 0 60px; /* Spacing between brands */
+  cursor: default;
 }
 
-/* KEY CHANGE */
+.brand-name {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #141418; /* Zinc-200 (Ghostly gray) */
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+/* Visual Dot between items */
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #f4f4f5;
+  border-radius: 50%;
+  margin-left: 60px;
+  transition: background-color 0.4s ease;
+}
+
+/* Hover Effects */
+.card:hover .brand-name {
+  color: #000000;
+  transform: scale(1.05);
+}
+
+.card:hover .dot {
+  background-color: #000000;
+}
+
+/* Animation */
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 2rem;
+  }
+  .card {
+    padding: 0 30px;
+  }
+  .dot {
+    margin-left: 30px;
   }
 }
