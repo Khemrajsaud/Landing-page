@@ -176,7 +176,7 @@ export default function Portfolio() {
            className="mt-24 text-center"
         >
           <button className="group relative overflow-hidden bg-black text-white px-12 py-5 rounded-none font-black uppercase text-xs tracking-[0.3em] hover:bg-zinc-800 transition-all">
-            <span className="relative z-10">Archive 2024</span>
+            <span className="relative z-10">Archive 2025</span>
             <div className="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 mix-blend-difference"></div>
           </button>
         </motion.div>
